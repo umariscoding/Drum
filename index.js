@@ -6,20 +6,26 @@ for(i=0;i<noOfButtons;i++){
         console.log(this.textContent);
         character = this.textContent;
         musicPlay(character);
-        
-
-
+        buttonAnimation(character);
     });
 }
 
-
+//when keys are pressed
 document.addEventListener("keypress",function (event){
 console.log(event.key);
 character = event.key;
 musicPlay(character);
+buttonAnimation(character);
 })
 
-
+//does the animation by adding css class
+function buttonAnimation(character){
+    var toBeAnimated = document.querySelector("."+character);
+    toBeAnimated.classList.add("pressed")
+    setTimeout(function(){
+        toBeAnimated.classList.remove("pressed")
+    }, 200);
+}
 
 function musicPlay(character){
     switch (character) {
