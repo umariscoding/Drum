@@ -13,6 +13,14 @@ for(i=0;i<noOfButtons;i++){
 }
 
 
+document.addEventListener("keypress",function (event){
+console.log(event.key);
+character = event.key;
+musicPlay(character);
+})
+
+
+
 function musicPlay(character){
     switch (character) {
         case "w":
